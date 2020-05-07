@@ -16,12 +16,16 @@ int main(void) {
   for (int i = 0; i < 10; i++) {
     if ( 10-i > 1) {
       printf("Prueba con una letra (tienes %d intentos): ", 10 - i);
-      scanf("%s", attemps + i);
+      scanf("%s", &attemps[i]);
     }
     else {
       printf("Prueba con una letra (tienes %d intento): ", 10 - i);
-      scanf("%s", attemps + i);
+      scanf("%s", &attemps[i]);
     }
+  }
+
+  for (int i = 0; i < 10; i++) {
+    printf("%c", *(attemps + i));
   }
 
   free(attemps);
