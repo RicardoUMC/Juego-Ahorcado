@@ -13,30 +13,43 @@ int main(void) {
   char word[5] = "kirby";
 
   printf("Juguemos ahorcado.\n");
+  int count = 0;
 
   for (int i = 0; i < 10; i++) {
     if ( 10-i > 1) {
-      printf("Prueba con una letra (tienes %d intentos): ", 10 - i);
+      printf("\nPrueba con una letra (tienes %d intentos): ", 10 - i);
       scanf("%s", &attemps[i]);
     }
     else {
-      printf("Prueba con una letra (tienes %d intento): ", 10 - i);
+      printf("\nPrueba con una letra (tienes %d intento): ", 10 - i);
       scanf("%s", &attemps[i]);
     }
 
     for (int j = 0; j < i; j++) {
       if (*(attemps + i) == *(attemps + j)) {
-        printf("Ya utilizaste la letra '%c'\n", *(attemps + i));
+        printf("\nYa utilizaste la letra '%c'\n", *(attemps + i));
         i--;
         break;
       }
     }
 
+    for (int k = 0; k < 5; k++) {
+      if (*(attemps + i) == word[k]) {
+        printf("\nLa letra %c se encuentra en la posición %d\n", *(attemps + i), k+1);
+        count++;
+        if (count == 5) {
+          printf("\n¡FELICIDADES! Me ganaste, la palabra es 'Kirby'.\n");
+          exit(1);
+        }
+      }
+    }
   }
 
-  for (int i = 0; i < 10; i++) {
-    printf("%c", *(attemps + i));
-  }
+  printf("Lo siento, perdiste. :c\n");
+  //
+  // for (int i = 0; i < 10; i++) {
+  //   printf("%c", *(attemps + i));
+  // }
 
   free(attemps);
 
