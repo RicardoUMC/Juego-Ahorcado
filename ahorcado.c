@@ -12,7 +12,7 @@ int main(void) {
 
   char word[5] = "kirby";
 
-  printf("JUGUEMOS AHORCADO.\n");
+  printf("\nJUGUEMOS AHORCADO.\n");
   int count = 0;
 
   for (int i = 0; i < 10; i++) {
@@ -45,7 +45,7 @@ int main(void) {
     }
   }
 
-  printf("Lo siento, perdiste. :c\n");
+  printf("\nLo siento, perdiste. Ya no te quedan intentos. :c\n");
   //
   // for (int i = 0; i < 10; i++) {
   //   printf("%c", *(attemps + i));
