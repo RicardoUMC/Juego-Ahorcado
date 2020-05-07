@@ -24,24 +24,29 @@ int main(void) {
       scanf("%s", &attemps[i]);
     }
 
-    for (int j = 0; j < i; j++) {
-      if (*(attemps + i) == *(attemps + j)) {
-        printf("\nYa utilizaste la letra '%c'\n", *(attemps + i));
-        i--;
-        break;
-      }
-    }
-
     for (int k = 0; k < 5; k++) {
       if (*(attemps + i) == word[k]) {
-        printf("\nLa letra %c se encuentra en la posición %d\n", *(attemps + i), k+1);
+        printf("\nLa letra '%c' se encuentra en la posición %d.\n", *(attemps + i), k+1);
         count++;
         if (count == 5) {
           printf("\n¡FELICIDADES! Me ganaste, la palabra es 'Kirby'.\n");
           exit(1);
         }
+        break;
+      }
+      else if (k == 4 && *(attemps + i) != word[k]) {
+        printf("\nLa letra '%c' no esta en la palabra.\n", *(attemps + i));
       }
     }
+
+    for (int j = 0; j < i; j++) {
+      if (*(attemps + i) == *(attemps + j)) {
+        printf("Recuerda que ya la habias utilizado\n");
+        i--;
+        break;
+      }
+    }
+
   }
 
   printf("\nLo siento, perdiste. Ya no te quedan intentos. :c\n");
