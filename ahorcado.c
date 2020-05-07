@@ -30,6 +30,7 @@ int main(void) {
         count++;
         if (count == 5) {
           printf("\n¡FELICIDADES! Me ganaste, la palabra es 'Kirby'.\n");
+          free(attemps);
           exit(1);
         }
         break;
