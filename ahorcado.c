@@ -1,21 +1,30 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void) {
-  // int *letter;
-  // letter = (char*) malloc(10 * sizeof(char));
-  // if (letter == NULL) {
-  //   printf("No se pudo reservar el espacio de memoria");
-  //   exit(1);
-  // }
+  char *attemps;
+  attemps = (char*) malloc(10 * sizeof(char));
+  if (attemps == NULL) {
+    printf("No se pudo reservar el espacio de memoria");
+    exit(1);
+  }
 
-  char array[5] = "kirby";
+  char word[5] = "kirby";
 
-  printf("Juguemos ahorcado, tienes 10 intentos.\n");
+  printf("Juguemos ahorcado.\n");
 
-  printf("Prueba con una letra: ");
-  scanf("%s\n", &letter);
+  for (int i = 0; i < 10; i++) {
+    if ( 10-i > 1) {
+      printf("Prueba con una letra (tienes %d intentos): ", 10 - i);
+      scanf("%s", attemps + i);
+    }
+    else {
+      printf("Prueba con una letra (tienes %d intento): ", 10 - i);
+      scanf("%s", attemps + i);
+    }
+  }
 
-
+  free(attemps);
 
   return 0;
 }
