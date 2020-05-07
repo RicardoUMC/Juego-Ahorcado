@@ -12,7 +12,7 @@ int main(void) {
 
   char word[5] = "kirby";
 
-  printf("Juguemos ahorcado.\n");
+  printf("JUGUEMOS AHORCADO.\n");
   int count = 0;
 
   for (int i = 0; i < 10; i++) {
