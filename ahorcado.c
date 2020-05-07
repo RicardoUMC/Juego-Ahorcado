@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(void) {
   char *attemps;
@@ -22,6 +23,15 @@ int main(void) {
       printf("Prueba con una letra (tienes %d intento): ", 10 - i);
       scanf("%s", &attemps[i]);
     }
+
+    for (int j = 0; j < i; j++) {
+      if (*(attemps + i) == *(attemps + j)) {
+        printf("Ya utilizaste la letra '%c'\n", *(attemps + i));
+        i--;
+        break;
+      }
+    }
+
   }
 
   for (int i = 0; i < 10; i++) {
