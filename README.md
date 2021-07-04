@@ -1,2 +1,2 @@
-# practica8
+# Ahorcado
 Práctica 8: "Ahorcado" en lenguaje C
