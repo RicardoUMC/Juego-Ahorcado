@@ -1,2 +1,6 @@
-# Ahorcado
-Práctica 8: "Ahorcado" en lenguaje C
+# Juguemos Ahorcado
+
+Juego **ahorcado** en lenguaje _C_. 
+
+**¿Crees poder adivinar la palabra?**
+
